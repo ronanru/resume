@@ -1,0 +1,168 @@
+---
+import photo from './assets/photo.webp';
+import { Icon } from 'astro-icon';
+
+const skills = {
+    'Programming Languages': [
+      { name: 'TypeScript', icon: 'logos:typescript-icon' },
+      { name: 'JavaScript', icon: 'logos:javascript' }
+    ],
+    'Frontend Development': [
+      { name: 'TailwindCSS', icon: 'logos:tailwindcss-icon' },
+      { name: 'React', icon: 'logos:react' },
+      { name: 'Vue', icon: 'logos:vue' },
+      { name: 'Svelte', icon: 'logos:svelte-icon' },
+      { name: 'Solid', icon: 'logos:solidjs-icon' },
+      { name: 'Next.js', icon: 'logos:nextjs-icon' },
+      { name: 'SvelteKit', icon: 'logos:svelte-icon' },
+      { name: 'SASS', icon: 'logos:sass' },
+      { name: 'Electron', icon: 'logos:electron' }
+    ],
+    'Node.js ecosystem': [
+      { name: 'Fastify', icon: 'logos:fastify-icon' },
+      { name: 'NestJS', icon: 'logos:nestjs' },
+      { name: 'Prisma', icon: 'logos:prisma' },
+      { name: 'Express', icon: 'simple-icons:express' },
+      { name: 'tRPC' },
+      { name: 'socket.io', icon: 'cib:socket-io' }
+    ],
+    'Other Technologies': [
+      { name: 'Docker', icon: 'logos:docker-icon' },
+      { name: 'Git', icon: 'logos:git-icon' },
+      { name: 'GraphQL', icon: 'logos:graphql' },
+      { name: 'Linux', icon: 'logos:linux-tux' }
+    ]
+  },
+  openSourceProjects = [
+    {
+      name: 'Svelte Flip Clock',
+      link: 'https://svelte-flip-clock.ronanru.dev/',
+      github: 'https://github.com/ronanru/svelte-flip-clock',
+      description: 'A customizible flip clock component for Svelte'
+    },
+    {
+      name: 'My FAQ Page',
+      link: 'https://myfaq.page/',
+      github: 'https://github.com/ronanru/myfaq.page',
+      description: 'An FAQ Page generator web app'
+    }
+  ];
+---
+
+<main
+  class="relative overflow-hidden w-[210mm] h-[297mm] print:w-screen print:h-screen bg-white p-8 m-4 print:shadow-none print:rounded-none print:m-0 print rounded-md shadow-lg">
+  <section class="flex justify-between items-stretch border-b border-black p-4 mb-4">
+    <div class="flex flex-col">
+      <div class="flex flex-1 flex-col justify-center gap-2">
+        <h1 class="font-bold text-4xl">Matvey Ryabchikov</h1>
+        <h2 class="text-xl">Full Stack Developer</h2>
+      </div>
+      <div class="flex gap-4">
+        <a
+          href="https://ronanru.com"
+          class="flex gap-1 items-center"
+          target="_blank"
+          rel="noopener noreferrer">
+          <Icon pack="mdi" name="link" class="w-5 h-5" /> ronanru.com
+        </a>
+        <a
+          href="https://github.com/ronanru"
+          class="flex gap-1 items-center"
+          target="_blank"
+          rel="noopener noreferrer">
+          <Icon pack="mdi" name="github" class="w-5 h-5" /> github.com/ronanru
+        </a>
+        <a href="mailto:ryabchikovm@pm.me" class="flex gap-1 items-center">
+          <Icon pack="mdi" name="email" class="w-5 h-5" /> ryabchikovm@pm.me
+        </a>
+      </div>
+    </div>
+    <img
+      src={photo}
+      alt="My photo"
+      width="300"
+      height="300"
+      class="rounded-full border border-black w-48 h-48"
+    />
+  </section>
+  <section class="p-4 space-y-2">
+    <h2 class="font-bold text-2xl">About Me</h2>
+    <p class="indent-6">
+      I'm a young and aspiring developer looking for full-stack and frontend positions. I have 3
+      years of experience building websites, and web applications for individuals and businesses. I
+      like to experiment with cutting-edge web technologies.
+    </p>
+  </section>
+  <section class="p-4 space-y-2">
+    <h2 class="font-bold text-2xl">Technical Skills</h2>
+    {
+      Object.entries(skills).map(([category, list]) => (
+        <p class="flex gap-2 flex-wrap indent-6">
+          <span class="font-bold">{category}:</span>
+          {list.map(({ name, icon }, i) => (
+            <span class="flex items-center gap-1 indent-0">
+              {icon && <Icon name={icon} class="w-5 h-5" />}
+              {`${name}${i === list.length - 1 ? '.' : ','}`}
+            </span>
+          ))}
+        </p>
+      ))
+    }
+  </section>
+  <section class="p-4 space-y-2">
+    <h2 class="font-bold text-2xl">Employment History</h2>
+    <div>
+      <h3>
+        2021 - 2022 <span class="mx-1.5">·</span>
+        <span class="font-bold">Full Stack Developer</span> at SPWorlds
+      </h3>
+      <p class="indent-6 italic">
+        Maintained a big and dynamic website, implemented a payment system, translated Figma
+        designed to a TailwindCSS component library.
+      </p>
+    </div>
+    <div>
+      <h3>
+        2019 - Present <span class="mx-1.5">·</span>
+        <span class="font-bold">Freelance Web Developer</span>
+      </h3>
+      <p class="indent-6 italic">
+        Completed multiple projects on different platforms for clients from EU, the UK, United
+        States, and Canada.
+      </p>
+    </div>
+  </section>
+  <section class="p-4 space-y-2">
+    <h2 class="font-bold text-2xl">Open-source Projects</h2>
+    {
+      openSourceProjects.map(({ description, link, name, github }) => (
+        <div>
+          <p class="flex gap-1">
+            <span class="font-bold">{name}</span>
+            <span class="flex">
+              (
+              <a class="underline block" href={link} target="_blank" rel="noopener noreferrer">
+                Live
+              </a>
+              ,
+              <a
+                class="underline block ml-1"
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+              </a>
+              )
+            </span>{' '}
+            - <span class="italic">{description}</span>.
+          </p>
+        </div>
+      ))
+    }
+  </section>
+  <div
+    class="font-mono pointer-events-none font-bold text-[25rem] absolute -right-28 bottom-0 opacity-5"
+    aria-hidden>
+    {'</>'}
+  </div>
+</main>
