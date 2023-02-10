@@ -1,5 +1,4 @@
 ---
-import photo from './assets/photo.webp';
 import { Icon } from 'astro-icon';
 
 const skills = {
@@ -8,11 +7,11 @@ const skills = {
       { name: 'JavaScript', icon: 'logos:javascript' }
     ],
     'Frontend Development': [
-      { name: 'TailwindCSS', icon: 'logos:tailwindcss-icon' },
       { name: 'React', icon: 'logos:react' },
       { name: 'Vue', icon: 'logos:vue' },
       { name: 'Svelte', icon: 'logos:svelte-icon' },
       { name: 'Solid', icon: 'logos:solidjs-icon' },
+      { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
       { name: 'Next.js', icon: 'logos:nextjs-icon' },
       { name: 'SvelteKit', icon: 'logos:svelte-icon' },
       { name: 'Astro', icon: 'simple-icons:astro' },
@@ -21,7 +20,6 @@ const skills = {
     ],
     'Node.js ecosystem': [
       { name: 'Fastify', icon: 'logos:fastify-icon' },
-      { name: 'NestJS', icon: 'logos:nestjs' },
       { name: 'Prisma', icon: 'logos:prisma' },
       { name: 'Express', icon: 'simple-icons:express' },
       { name: 'tRPC' },
@@ -36,16 +34,16 @@ const skills = {
   },
   openSourceProjects = [
     {
-      name: 'Svelte Flip Clock',
-      link: 'https://svelte-flip-clock.ronanru.dev/',
-      github: 'https://github.com/ronanru/svelte-flip-clock',
-      description: 'A customizible flip clock component for Svelte'
-    },
-    {
       name: 'My FAQ Page',
       link: 'https://myfaq.page/',
       github: 'https://github.com/ronanru/myfaq.page',
       description: 'An FAQ Page generator web app'
+    },
+    {
+      name: 'Svelte Flip Clock',
+      link: 'https://svelte-flip-clock.ronanru.dev/',
+      github: 'https://github.com/ronanru/svelte-flip-clock',
+      description: 'A customizible flip clock component for Svelte'
     }
   ];
 ---
@@ -78,21 +76,15 @@ const skills = {
         </a>
       </div>
     </div>
-    <img
-      src={photo}
-      alt="My photo"
-      width="300"
-      height="300"
-      class="rounded-full border border-black w-48 h-48"
-    />
   </section>
   <section class="p-4 space-y-2">
     <h2 class="font-bold text-2xl">About Me</h2>
     <p class="indent-6">
-      Young and aspiring developer looking for full-stack and frontend positions. I have 3 years of
-      experience building websites, and web applications, quickly moving from an idea to a deployed
-      site. I like to try new things and experiment with cutting-edge web technologies to stay up to
-      date with the latest standards.
+      I'm a young and driven full-stack web developer with four years of experience building
+      websites, web and desktop apps. My passion for technology and eagerness to continuously learn
+      and try new approaches allows me to stay at the forefront of web development and bring fresh
+      ideas to the table. I am dedicated to delivering exceptional results and am always easy to
+      communicate with.
     </p>
   </section>
   <section class="p-4 space-y-2">
@@ -115,22 +107,33 @@ const skills = {
     <h2 class="font-bold text-2xl">Employment History</h2>
     <div>
       <h3>
-        2021 - 2022 <span class="mx-1.5">·</span>
-        <span class="font-bold">Full Stack Developer</span> at SPWorlds
+        2019 - 2022 <span class="mx-1.5">·</span>
+        <span class="font-bold">Freelance Web Developer</span>
       </h3>
       <p class="indent-6 italic">
-        Maintained a big and dynamic website, implemented a payments system, translated Figma
-        designed to a TailwindCSS component library.
+        Delivered high-quality services, managed end-to-end web development projects for clients in
+        Europe and North America.
       </p>
     </div>
     <div>
       <h3>
-        2019 - Present <span class="mx-1.5">·</span>
-        <span class="font-bold">Freelance Web Developer</span>
+        2021 - 2022 <span class="mx-1.5">·</span>
+        <span class="font-bold">Full Stack Developer</span> at SPWorlds
       </h3>
       <p class="indent-6 italic">
-        Completed multiple projects on different platforms for clients from EU, the UK, United
-        States, and Canada.
+        Led a small team developing and maintaining an interactive web application and an open API.
+        Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit,
+        Tailwind.
+      </p>
+    </div>
+    <div>
+      <h3>
+        2022 - 2023 <span class="mx-1.5">·</span>
+        <span class="font-bold">Full Stack Developer</span> at Vmeste
+      </h3>
+      <p class="indent-6 italic">
+        Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS).
+        Rapidly delivered new features to both backend and frontend. Improved the CI/CD pipeline.
       </p>
     </div>
   </section>
@@ -161,6 +164,22 @@ const skills = {
         </div>
       ))
     }
+    <div>
+      <p class="flex gap-1">
+        Contributed to
+        <span class="font-bold">create-t3-app</span>
+        <span class="flex">
+          (<a
+            class="underline block"
+            href="https://github.com/t3-oss/create-t3-app"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+          </a>
+          )
+        </span> and other open-source projects.
+      </p>
+    </div>
   </section>
   <div
     class="font-mono pointer-events-none font-bold text-[25rem] absolute -right-28 bottom-0 opacity-5"
