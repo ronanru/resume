@@ -40,16 +40,16 @@ const skills = {
       description: 'An FAQ Page generator web app'
     },
     {
-      name: 'Svelte Flip Clock',
-      link: 'https://svelte-flip-clock.ronanru.dev/',
-      github: 'https://github.com/ronanru/svelte-flip-clock',
-      description: 'A customizible flip clock component for Svelte'
+      name: 'ArchExplorer',
+      link: 'https://archexplorer.ronanru.dev/',
+      github: 'https://github.com/ronanru/ArchExplorer',
+      description: 'A search engline for Arch Linux packages'
     }
   ];
 ---
 
 <main
-  class="relative overflow-hidden w-[210mm] h-[297mm] print:w-screen print:h-screen bg-white p-8 m-4 print:shadow-none print:rounded-none print:m-0 print rounded-md shadow-lg">
+  class="relative overflow-hidden w-[210mm] h-[297mm] print:w-screen print:h-screen bg-white px-6 py-2 m-4 print:shadow-none print:rounded-none print:m-0 print rounded-md shadow-lg">
   <section class="flex justify-between items-stretch border-b border-black p-4 mb-4">
     <div class="flex flex-col">
       <div class="flex flex-1 flex-col justify-center gap-2">
@@ -107,7 +107,9 @@ const skills = {
     <h2 class="font-bold text-2xl">Employment History</h2>
     <div>
       <h3>
-        2019 - 2022 <span class="mx-1.5">·</span>
+        <span class="bg-neutral-200 text-neutral-800 rounded-md font-bold py-px px-1"
+          >2019 - 2022</span
+        ><br />
         <span class="font-bold">Freelance Web Developer</span>
       </h3>
       <p class="indent-6 italic">
@@ -117,8 +119,12 @@ const skills = {
     </div>
     <div>
       <h3>
-        2021 - 2022 <span class="mx-1.5">·</span>
-        <span class="font-bold">Full Stack Developer</span> at SPWorlds
+        <span class="bg-neutral-200 text-neutral-800 rounded-md font-bold py-px px-1"
+          >2021 - 2022</span
+        ><br />
+        <span class="font-bold">Full Stack Developer</span> at SPWorlds <span
+          class="text-neutral-700">// One of the biggest Russian Minecraft Server Network</span
+        >
       </h3>
       <p class="indent-6 italic">
         Led a small team developing and maintaining an interactive web application and an open API.
@@ -128,8 +134,12 @@ const skills = {
     </div>
     <div>
       <h3>
-        2022 - 2023 <span class="mx-1.5">·</span>
-        <span class="font-bold">Full Stack Developer</span> at Vmeste
+        <span class="bg-neutral-200 text-neutral-800 rounded-md font-bold py-px px-1"
+          >2022 - Current</span
+        ><br />
+        <span class="font-bold">Full Stack Developer</span> at Vmeste <span class="text-neutral-700"
+          >// A startup with a mission to connect Russians living abroad</span
+        >
       </h3>
       <p class="indent-6 italic">
         Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS).
