@@ -13,11 +13,11 @@ module.exports = {
           'Ubuntu Mono',
           'ui-monospace',
           'Courier New',
-          'monospace'
+          'monospace',
         ],
-        sans: ['Ubuntu', ...defaultTheme.fontFamily.sans]
-      }
-    }
+        sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };

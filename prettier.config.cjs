@@ -1,14 +1,20 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-  tabWidth: 2,
-  useTabs: false,
   singleQuote: true,
   arrowParens: 'avoid',
-  bracketSpacing: true,
-  semi: true,
-  printWidth: 100,
-  trailingComma: 'none',
-  endOfLine: 'lf',
-  bracketSameLine: true,
-  plugins: [require.resolve('prettier-plugin-tailwindcss')]
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ],
+  plugins: [
+    require.resolve('prettier-plugin-astro'),
+    require.resolve('prettier-plugin-organize-imports', {}),
+    require.resolve('prettier-plugin-tailwindcss'),
+  ],
+  organizeImportsSkipDestructiveCodeActions: true,
+  pluginSearchDirs: ['.'],
 };

@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon';
 const skills = {
     'Programming Languages': [
       { name: 'TypeScript', icon: 'logos:typescript-icon' },
-      { name: 'JavaScript', icon: 'logos:javascript' }
+      { name: 'JavaScript', icon: 'logos:javascript' },
     ],
     'Frontend Development': [
       { name: 'React', icon: 'logos:react' },
@@ -16,86 +16,92 @@ const skills = {
       { name: 'SvelteKit', icon: 'logos:svelte-icon' },
       { name: 'Astro', icon: 'simple-icons:astro' },
       { name: 'SASS', icon: 'logos:sass' },
-      { name: 'Electron', icon: 'logos:electron' }
+      { name: 'Electron', icon: 'logos:electron' },
     ],
     'Node.js ecosystem': [
       { name: 'Fastify', icon: 'logos:fastify-icon' },
       { name: 'Prisma', icon: 'logos:prisma' },
       { name: 'Express', icon: 'simple-icons:express' },
       { name: 'tRPC' },
-      { name: 'socket.io', icon: 'cib:socket-io' }
+      { name: 'socket.io', icon: 'cib:socket-io' },
     ],
     'Other Technologies': [
       { name: 'Docker', icon: 'logos:docker-icon' },
       { name: 'Git', icon: 'logos:git-icon' },
       { name: 'GraphQL', icon: 'logos:graphql' },
-      { name: 'Linux', icon: 'logos:linux-tux' }
-    ]
+      { name: 'Linux', icon: 'logos:linux-tux' },
+    ],
   },
   openSourceProjects = [
     {
       name: 'My FAQ Page',
       link: 'https://myfaq.page/',
       github: 'https://github.com/ronanru/myfaq.page',
-      description: 'An FAQ Page generator web app'
+      description: 'An FAQ Page generator web app',
     },
     {
       name: 'ArchExplorer',
       link: 'https://archexplorer.ronanru.dev/',
       github: 'https://github.com/ronanru/ArchExplorer',
-      description: 'A search engline for Arch Linux packages'
-    }
+      description: 'A search engline for Arch Linux packages',
+    },
   ];
 ---
 
 <main
-  class="relative overflow-hidden w-[210mm] h-[297mm] print:w-screen print:h-screen bg-white px-8 py-4 m-4 print:shadow-none print:rounded-none print:m-0 print rounded-md shadow-lg">
-  <section class="flex justify-between items-stretch border-b border-black p-4 mb-4">
+  class="print relative m-4 h-[297mm] w-[210mm] overflow-hidden rounded-md bg-white px-8 py-4 shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none"
+>
+  <section
+    class="mb-4 flex items-stretch justify-between border-b border-black p-4"
+  >
     <div class="flex flex-col">
       <div class="flex flex-1 flex-col justify-center gap-2">
-        <h1 class="font-bold text-4xl">Matvey Ryabchikov</h1>
+        <h1 class="text-4xl font-bold">Matvey Ryabchikov</h1>
         <h2 class="text-xl">Full Stack Developer</h2>
       </div>
       <div class="flex gap-4">
         <a
           href="https://ronanru.com"
-          class="flex gap-1 items-center"
+          class="flex items-center gap-1"
           target="_blank"
-          rel="noopener noreferrer">
-          <Icon pack="mdi" name="link" class="w-5 h-5" /> ronanru.com
+          rel="noopener noreferrer"
+        >
+          <Icon pack="mdi" name="link" class="h-5 w-5" /> ronanru.com
         </a>
         <a
           href="https://github.com/ronanru"
-          class="flex gap-1 items-center"
+          class="flex items-center gap-1"
           target="_blank"
-          rel="noopener noreferrer">
-          <Icon pack="mdi" name="github" class="w-5 h-5" /> github.com/ronanru
+          rel="noopener noreferrer"
+        >
+          <Icon pack="mdi" name="github" class="h-5 w-5" /> github.com/ronanru
         </a>
-        <a href="mailto:orlition@gmail.com" class="flex gap-1 items-center">
-          <Icon pack="mdi" name="email" class="w-5 h-5" /> orlition@gmail.com
+        <a href="mailto:orlition@gmail.com" class="flex items-center gap-1">
+          <Icon pack="mdi" name="email" class="h-5 w-5" /> orlition@gmail.com
         </a>
       </div>
     </div>
   </section>
-  <section class="p-4 space-y-2">
-    <h2 class="font-bold text-2xl">About Me</h2>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">About Me</h2>
     <p class="indent-6">
-      I'm a young and driven full-stack web developer with four years of experience building
-      websites, web and desktop apps. My passion for technology and eagerness to continuously learn
-      and try new approaches allows me to stay at the forefront of web development and bring fresh
-      ideas to the table. I am dedicated to delivering exceptional results and am always easy to
-      communicate with.
+      I'm a young and driven full-stack web developer with four years of
+      experience building websites, web and desktop apps. My passion for
+      technology and eagerness to continuously learn and try new approaches
+      allows me to stay at the forefront of web development and bring fresh
+      ideas to the table. I am dedicated to delivering exceptional results and
+      am always easy to communicate with.
     </p>
   </section>
-  <section class="p-4 space-y-2">
-    <h2 class="font-bold text-2xl">Technical Skills</h2>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Technical Skills</h2>
     {
       Object.entries(skills).map(([category, list]) => (
-        <p class="flex gap-2 flex-wrap indent-6">
+        <p class="flex flex-wrap gap-2 indent-6">
           <span class="font-bold">{category}:</span>
           {list.map(({ name, icon }, i) => (
             <span class="flex items-center gap-1 indent-0">
-              {icon && <Icon name={icon} class="w-5 h-5" />}
+              {icon && <Icon name={icon} class="h-5 w-5" />}
               {`${name}${i === list.length - 1 ? '.' : ','}`}
             </span>
           ))}
@@ -103,21 +109,25 @@ const skills = {
       ))
     }
   </section>
-  <section class="p-4 space-y-2">
-    <h2 class="font-bold text-2xl">Employment History</h2>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Employment History</h2>
     <div>
-      <p class="flex justify-between font-bold my-px">
-        <span class="bg-gray-300 w-fit px-2 rounded-md">Freelance Web Developer</span>
+      <p class="my-px flex justify-between font-bold">
+        <span class="w-fit rounded-md bg-gray-300 px-2"
+          >Freelance Web Developer</span
+        >
         <span>2019 - 2021</span>
       </p>
       <p class="italic">
-        Delivered high-quality services, managed end-to-end web development projects for clients
-        from all over the world.
+        Delivered high-quality services, managed end-to-end web development
+        projects for clients from all over the world.
       </p>
     </div>
     <div>
-      <p class="flex justify-between font-bold my-px">
-        <span class="bg-gray-300 w-fit px-2 rounded-md">Full Stack Developer</span>
+      <p class="my-px flex justify-between font-bold">
+        <span class="w-fit rounded-md bg-gray-300 px-2"
+          >Full Stack Developer</span
+        >
         <span>2021 - 2022</span>
       </p>
       <p>
@@ -127,14 +137,16 @@ const skills = {
         >
       </p>
       <p class="italic">
-        Led a small team developing and maintaining an interactive web application and an open API.
-        Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit,
-        Tailwind.
+        Led a small team developing and maintaining an interactive web
+        application and an open API. Moved the project through breaking changes.
+        Worked with TypeScript, Node.js, SvelteKit, Tailwind.
       </p>
     </div>
     <div>
-      <p class="flex justify-between font-bold my-px">
-        <span class="bg-gray-300 w-fit px-2 rounded-md">Full Stack Developer</span>
+      <p class="my-px flex justify-between font-bold">
+        <span class="w-fit rounded-md bg-gray-300 px-2"
+          >Full Stack Developer</span
+        >
         <span>2022 - Current</span>
       </p>
       <p>
@@ -144,13 +156,14 @@ const skills = {
         >
       </p>
       <p class="italic">
-        Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS).
-        Rapidly delivered new features to both backend and frontend. Improved the CI/CD pipeline.
+        Мigrated an old JS + React site to a modern stack (TypeScript, Next.js,
+        tRPC, Tailwind CSS). Rapidly delivered new features to both backend and
+        frontend. Improved the CI/CD pipeline.
       </p>
     </div>
   </section>
-  <section class="p-4 space-y-2">
-    <h2 class="font-bold text-2xl">Open-Source Projects</h2>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Open-Source Projects</h2>
     {
       openSourceProjects.map(({ description, link, name, github }) => (
         <div>
@@ -158,15 +171,21 @@ const skills = {
             <span class="font-bold">{name}</span>
             <span class="flex">
               (
-              <a class="underline block" href={link} target="_blank" rel="noopener noreferrer">
+              <a
+                class="block underline"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Site
               </a>
               ,
               <a
-                class="underline block ml-1"
+                class="ml-1 block underline"
                 href={github}
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 GitHub
               </a>
               )
@@ -182,10 +201,11 @@ const skills = {
         <span class="font-bold">create-t3-app</span>
         <span class="flex">
           (<a
-            class="underline block"
+            class="block underline"
             href="https://github.com/t3-oss/create-t3-app"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
           )
@@ -194,8 +214,9 @@ const skills = {
     </div>
   </section>
   <div
-    class="font-mono pointer-events-none font-bold text-[25rem] absolute -right-28 bottom-0 opacity-5"
-    aria-hidden>
+    class="pointer-events-none absolute -right-28 bottom-0 font-mono text-[25rem] font-bold opacity-5"
+    aria-hidden
+  >
     {'</>'}
   </div>
 </main>
