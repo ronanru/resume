@@ -1,42 +1,46 @@
 ---
 import { Icon } from 'astro-iconify';
 
-const
-  employmentHistory = [
+const employmentHistory = [
     {
-      title: "Freelance Web Developer",
+      title: 'Freelance Web Developer',
       time: '2018 - 2021',
-      description: "Delivered high-quality services, managed end-to-end web development projects for clients from all over the world."
+      description:
+        'Delivered high-quality services, managed end-to-end web development projects for clients from all over the world.',
     },
     {
       title: 'Full Stack Developer',
       company: {
-        name: "SPWorlds",
-        description: "One of the biggest Minecraft Server Network in Russia"
+        name: 'SPWorlds',
+        description: 'One of the biggest Minecraft Server Network in Russia',
       },
       time: '2021 - 2022',
-      description: "Led a small team developing and maintaining an interactive web application and an open API. Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit, Tailwind."
+      description:
+        'Led a small team developing and maintaining an interactive web application and an open API. Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit, Tailwind.',
     },
     {
-      title: "Full Stack Developer",
+      title: 'Full Stack Developer',
       company: {
-        name: "Vmeste",
-        description: "A startup with a mission to connect Russians living abroad"
+        name: 'Vmeste',
+        description:
+          'A startup with a mission to connect Russians living abroad',
       },
       time: '2022 - 2023',
-      description: "Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS). Rapidly delivered new features to both backend and frontend. Worked on the CI/CD pipeline.",
+      description:
+        'Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS). Rapidly delivered new features to both backend and frontend. Worked on the CI/CD pipeline.',
     },
     {
-      title: "Frontend Developer",
+      title: 'Frontend Developer (Part-time)',
       company: {
-        name: "Suvvy AI",
-        description: "A startup that integrates ChatGPT into existing CRM solutions",
+        name: 'Suvvy AI',
+        description: 'A startup that integrates ChatGPT into different  CRMs',
       },
-      time: "2023",
-      description: "Worked on a frontend to a customer portal.  Worked with SolidJS, TailwindCSS, TanStack Query, i18next"
-    }
+      time: '2023',
+      description:
+        'Was a sole frontend developer on a small startup.  Worked with SolidJS, TailwindCSS, TanStack Query, i18next',
+    },
   ],
-skills = {
+  skills = {
     'Programming Languages': [
       { name: 'TypeScript', icon: 'logos:typescript-icon' },
       { name: 'JavaScript', icon: 'logos:javascript' },
@@ -47,9 +51,10 @@ skills = {
       { name: 'Vue', icon: 'logos:vue' },
       { name: 'Svelte', icon: 'logos:svelte-icon' },
       { name: 'Solid', icon: 'logos:solidjs-icon' },
+      { name: 'HTMX' },
       { name: 'Alpine.js', icon: 'devicon:alpinejs' },
       { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-      { name: 'Next.js v13', icon: 'logos:nextjs-icon' },
+      { name: 'Next.js', icon: 'logos:nextjs-icon' },
       { name: 'SvelteKit', icon: 'logos:svelte-icon' },
       { name: 'Astro', icon: 'simple-icons:astro' },
       { name: 'SASS', icon: 'logos:sass' },
@@ -61,18 +66,20 @@ skills = {
       { name: 'Prisma', icon: 'logos:prisma' },
       { name: 'Drizzle' },
       { name: 'tRPC', icon: 'simple-icons:trpc' },
-      { name: 'socket.io', icon: 'cib:socket-io' },
       { name: 'Cloudflare Workers', icon: 'devicon:cloudflareworkers' },
     ],
     'Other Technologies': [
       { name: 'Docker', icon: 'logos:docker-icon' },
       { name: 'Git', icon: 'logos:git-icon' },
       { name: 'GraphQL', icon: 'logos:graphql' },
+      { name: 'SQL', icon: 'mdi:database' },
+      { name: 'WebSockets', icon: 'mdi:database' },
+      { name: 'REDIS', icon: 'logos:redis' },
       { name: 'Linux', icon: 'logos:linux-tux' },
     ],
   },
   openSourceProjects = [
-  {
+    {
       name: 'Ronix',
       github: 'https://github.com/ronanru/ronix',
       description: 'Linux music player and library manager',
@@ -157,23 +164,19 @@ skills = {
     <h2 class="text-2xl font-bold">Employment History</h2>
     {
       employmentHistory.map(job => (
-      <div>
-        <p class="my-px flex justify-between font-bold mt-4">
-          <span class="w-fit rounded-md bg-gray-300 px-2"
-            >{job.title}</span>
-          <span>{job.time}</span>
-        </p>
-        {
-          job.company && (
-          <p>
-          <b>Company:</b> {job.company.name}
-          <span class="text-neutral-700"
-            >// {job.company.description}</span>
-        </p>
-          )
-        }
-        <p class="italic">{job.description}</p>
-      </div>
+        <div>
+          <p class="my-px flex justify-between font-bold mt-4">
+            <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
+            <span>{job.time}</span>
+          </p>
+          {job.company && (
+            <p>
+              <b>Company:</b> {job.company.name}
+              <span class="text-neutral-700">// {job.company.description}</span>
+            </p>
+          )}
+          <p class="italic">{job.description}</p>
+        </div>
       ))
     }
   </section>
@@ -185,19 +188,28 @@ skills = {
           <p class="flex gap-1">
             <span class="font-bold">{name}</span>
             <span class="flex">
-              ({link && (<><a
-                class="block underline"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Site
-              </a>,{' '}</>)}<a
+              (
+              {link && (
+                <>
+                  <a
+                    class="block underline"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Site
+                  </a>
+                  ,{' '}
+                </>
+              )}
+              <a
                 class="block underline"
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-              >GitHub</a>
+              >
+                GitHub
+              </a>
               )
             </span>{' '}
             - <span class="italic">{description}</span>.
@@ -218,7 +230,7 @@ skills = {
           >
             GitHub
           </a>
-          )
+           )
         </span> and other open-source projects.
       </p>
     </div>
