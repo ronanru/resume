@@ -184,54 +184,58 @@ const employmentHistory = [
     <h2 class="text-2xl font-bold">Open-Source Projects</h2>
     {
       openSourceProjects.map(({ description, link, name, github }) => (
-        <div>
-          <p class="flex gap-1">
-            <span class="font-bold">{name}</span>
-            <span class="flex">
-              (
-              {link && (
-                <>
-                  <a
-                    class="block underline"
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Site
-                  </a>
-                  ,{' '}
-                </>
-              )}
-              <a
-                class="block underline"
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              )
-            </span>{' '}
-            - <span class="italic">{description}</span>.
-          </p>
-        </div>
+        <p class="flex gap-1">
+          <span class="font-bold">{name}</span>
+          <span class="flex">
+            (
+            {link && (
+              <span class="mr-1">
+                <a
+                  class="underline"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Site
+                </a>
+                ,
+              </span>
+            )}
+            <a
+              class="underline"
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            ) -
+          </span>
+          <span class="italic">{description}</span>.
+        </p>
       ))
     }
     <div>
-      <p class="flex gap-1">
+      <p>
         Contributed to
-        <span class="font-bold">create-t3-app</span>
-        <span class="flex">
-          (<a
-            class="block underline"
-            href="https://github.com/t3-oss/create-t3-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-           )
-        </span> and other open-source projects.
+        <a
+          class="underline"
+          href="https://github.com/t3-oss/create-t3-app"
+          target="_blank"
+          rel="noopener noreferrer">create-t3-app</a
+        >,
+        <a
+          class="underline"
+          href="https://github.com/pop-os/shell"
+          target="_blank"
+          rel="noopener noreferrer">pop-shell</a
+        >,
+        <a
+          class="underline"
+          href="https://github.com/codicocodes/dotfyle"
+          target="_blank"
+          rel="noopener noreferrer">dotfyle</a
+        >, and multiple other open-source projects.
       </p>
     </div>
   </section>
