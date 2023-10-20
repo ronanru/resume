@@ -57,12 +57,13 @@ const employmentHistory = [
       { name: 'Next.js', icon: 'logos:nextjs-icon' },
       { name: 'SvelteKit', icon: 'logos:svelte-icon' },
       { name: 'Astro', icon: 'simple-icons:astro' },
-      { name: 'SASS', icon: 'logos:sass' },
       { name: 'Electron', icon: 'logos:electron' },
       { name: 'Tauri', icon: 'logos:tauri' },
     ],
     'JS/TS ecosystem': [
       { name: 'Fastify', icon: 'logos:fastify-icon' },
+      { name: 'Hono', icon: 'logos:hono' },
+      { name: 'Elysia' },
       { name: 'Prisma', icon: 'logos:prisma' },
       { name: 'Drizzle' },
       { name: 'tRPC', icon: 'simple-icons:trpc' },
@@ -105,7 +106,7 @@ const employmentHistory = [
   <section
     class="mb-4 flex items-stretch justify-between border-b border-black p-4"
   >
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-2">
       <div class="flex flex-1 flex-col justify-center gap-2">
         <h1 class="text-4xl font-bold">Matvey Ryabchikov</h1>
         <h2 class="text-xl">Full Stack Developer</h2>
@@ -134,17 +135,6 @@ const employmentHistory = [
     </div>
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">About Me</h2>
-    <p class="indent-6">
-      I'm a young and driven full-stack web developer with four years of
-      experience building websites, web and desktop apps. My passion for
-      technology and eagerness to continuously learn and try new approaches
-      allows me to stay at the forefront of web development and bring fresh
-      ideas to the table. I am dedicated to delivering exceptional results and
-      am always easy to communicate with.
-    </p>
-  </section>
-  <section class="space-y-2 p-4">
     <h2 class="text-2xl font-bold">Technical Skills</h2>
     {
       Object.entries(skills).map(([category, list]) => (
@@ -161,7 +151,7 @@ const employmentHistory = [
     }
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Employment History</h2>
+    <h2 class="text-2xl font-bold">Work Experience</h2>
     {
       employmentHistory.map(job => (
         <div>
@@ -215,29 +205,28 @@ const employmentHistory = [
         </p>
       ))
     }
-    <div>
-      <p>
-        Contributed to
-        <a
-          class="underline"
-          href="https://github.com/t3-oss/create-t3-app"
-          target="_blank"
-          rel="noopener noreferrer">create-t3-app</a
-        >,
-        <a
-          class="underline"
-          href="https://github.com/pop-os/shell"
-          target="_blank"
-          rel="noopener noreferrer">pop-shell</a
-        >,
-        <a
-          class="underline"
-          href="https://github.com/codicocodes/dotfyle"
-          target="_blank"
-          rel="noopener noreferrer">dotfyle</a
-        >, and multiple other open-source projects.
-      </p>
-    </div>
+    <br />
+    <p>
+      I'm a frequent open-source contributer, I contributed to
+      <a
+        class="underline"
+        href="https://github.com/t3-oss/create-t3-app"
+        target="_blank"
+        rel="noopener noreferrer">create-t3-app</a
+      >,
+      <a
+        class="underline"
+        href="https://github.com/pop-os/shell"
+        target="_blank"
+        rel="noopener noreferrer">pop-shell</a
+      >,
+      <a
+        class="underline"
+        href="https://github.com/codicocodes/dotfyle"
+        target="_blank"
+        rel="noopener noreferrer">dotfyle</a
+      >, and multiple other open-source projects.
+    </p>
   </section>
   <div
     class="pointer-events-none absolute -right-28 bottom-56 font-mono text-[25rem] font-bold opacity-5"
