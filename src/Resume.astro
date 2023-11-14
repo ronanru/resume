@@ -156,12 +156,12 @@ const employmentHistory = [
     {
       employmentHistory.map(job => (
         <div>
-          <p class="my-px flex justify-between font-bold mt-4">
+          <p class="my-px mt-4 flex justify-between font-bold">
             <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
             <span>{job.time}</span>
           </p>
           {job.company && (
-            <p>
+            <p class="flex gap-1">
               <b>Company:</b> {job.company.name}
               <span class="text-neutral-700">// {job.company.description}</span>
             </p>
