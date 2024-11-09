@@ -16,7 +16,7 @@ const employmentHistory = [
       },
       time: '2021 - 2022',
       description:
-        'Led a small team developing and maintaining an interactive web application and an open API. Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit, Tailwind.',
+        'Led a small team developing and maintaining an interactive web application. Moved the project through breaking changes. Designed a public API and an npm library. Worked with TypeScript, SvelteKit, Tailwind.',
     },
     {
       title: 'Full Stack Developer',
@@ -27,17 +27,17 @@ const employmentHistory = [
       },
       time: '2022 - 2023',
       description:
-        'Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS). Rapidly delivered new features to both backend and frontend. Worked on the CI/CD pipeline.',
+        'Мigrated an old node.js + React codebase to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS). Rapidly delivered new features to both backend and frontend. Convinced the team to use Tailwind CSS.',
     },
     {
-      title: 'Frontend Developer (Part-time)',
+      title: 'Senior Full Stack Developer',
       company: {
-        name: 'Suvvy AI',
-        description: 'A startup that integrates ChatGPT into different  CRMs',
+        name: 'Finally Founding',
+        description: 'Dev Agency working with US-based startups',
       },
-      time: '2023',
+      time: '2023 - Present',
       description:
-        'Was a sole frontend developer on a small startup.  Worked with SolidJS, TailwindCSS, TanStack Query, i18next',
+        'Delivered multiple unique projects. Improved app performance by removing heavy dependencies. Worked with React, Next.js, Tailwind, React Native.',
     },
   ],
   skills = {
@@ -45,7 +45,6 @@ const employmentHistory = [
       { name: 'TypeScript', icon: 'logos:typescript-icon' },
       { name: 'JavaScript', icon: 'logos:javascript' },
       { name: 'Rust', icon: 'logos:rust' },
-      { name: 'Go', icon: 'logos:go' },
     ],
     'Frontend Development': [
       { name: 'React', icon: 'logos:react' },
@@ -83,7 +82,12 @@ const employmentHistory = [
       { name: 'Linux', icon: 'logos:linux-tux' },
     ],
   },
-  openSourceProjects = [
+  openSourceProjects: {
+    github: string;
+    name: string;
+    description: string;
+    link?: string;
+  }[] = [
     {
       name: 'Ronix',
       github: 'https://github.com/ronanru/ronix',
@@ -91,15 +95,13 @@ const employmentHistory = [
     },
     {
       name: 'My FAQ Page',
-      link: 'https://myfaq.page/',
       github: 'https://github.com/ronanru/myfaq.page',
       description: 'An FAQ Page generator web app',
     },
     {
-      name: 'ArchExplorer',
-      link: 'https://archexplorer.ronanru.dev/',
-      github: 'https://github.com/ronanru/ArchExplorer',
-      description: 'A search engline for Arch Linux packages',
+      name: 'UnoPack',
+      github: 'https://github.com/ronanru/unopack',
+      description: 'Minecraft modpack bundler',
     },
   ];
 ---
@@ -112,8 +114,8 @@ const employmentHistory = [
   >
     <div class="flex flex-col gap-2">
       <div class="flex flex-1 flex-col justify-center gap-2">
-        <h1 class="text-4xl font-bold">Matvey Ryabchikov</h1>
-        <h2 class="text-xl">Full Stack Developer</h2>
+        <h1 class="font-heading text-4xl font-bold">Matvey Ryabchikov</h1>
+        <h2 class="font-heading text-xl">Full Stack Developer</h2>
       </div>
       <div class="flex gap-4">
         <a
@@ -139,10 +141,10 @@ const employmentHistory = [
     </div>
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Technical Skills</h2>
+    <h2 class="font-heading text-2xl font-bold">Technical Skills</h2>
     {
       Object.entries(skills).map(([category, list]) => (
-        <p class="flex flex-wrap gap-2 indent-6">
+        <p class="flex flex-wrap gap-2">
           <span class="font-bold">{category}:</span>
           {list.map(({ name, icon }, i) => (
             <span class="flex items-center gap-1 indent-0">
@@ -155,13 +157,13 @@ const employmentHistory = [
     }
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Work Experience</h2>
+    <h2 class="font-heading text-2xl font-bold">Work Experience</h2>
     {
       employmentHistory.map(job => (
         <div>
           <p class="my-px mt-4 flex justify-between font-bold">
             <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
-            <span>{job.time}</span>
+            <span class="tabular-nums">{job.time}</span>
           </p>
           {job.company && (
             <p class="flex gap-1">
@@ -175,7 +177,7 @@ const employmentHistory = [
     }
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Open-Source Projects</h2>
+    <h2 class="font-heading text-2xl font-bold">Open-Source Projects</h2>
     {
       openSourceProjects.map(({ description, link, name, github }) => (
         <p class="flex gap-1">
@@ -205,13 +207,13 @@ const employmentHistory = [
             </a>
             ) -
           </span>
-          <span class="italic">{description}</span>.
+          <span class="italic">{description}</span>
         </p>
       ))
     }
     <br />
     <p>
-      I'm a frequent open-source contributer, I contributed to
+      I'm a frequent open-source contributor, I contributed to
       <a
         class="underline"
         href="https://github.com/t3-oss/create-t3-app"
@@ -220,15 +222,15 @@ const employmentHistory = [
       >,
       <a
         class="underline"
-        href="https://github.com/pop-os/shell"
+        href="https://github.com/vercel/next.js"
         target="_blank"
-        rel="noopener noreferrer">pop-shell</a
+        rel="noopener noreferrer">next.js</a
       >,
       <a
         class="underline"
-        href="https://github.com/codicocodes/dotfyle"
+        href="https://github.com/es-tooling/module-replacements-codemods"
         target="_blank"
-        rel="noopener noreferrer">dotfyle</a
+        rel="noopener noreferrer">module-replacements-codemods</a
       >, and multiple other open-source projects.
     </p>
   </section>
